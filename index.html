@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Pablo Arango - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e31e24;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e31e24;
+            margin-bottom: 8px;
+        }
+        
+        .title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            font-size: 12px;
+            color: #555;
+        }
+        
+        .contact-info span {
+            margin: 0 8px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e31e24;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 3px;
+        }
+        
+        .summary-text {
+            font-size: 13px;
+            text-align: justify;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 15px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: #e31e24;
+            font-size: 13px;
+        }
+        
+        .date {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .location {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .description {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .description li {
+            margin-bottom: 3px;
+            margin-left: 18px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 12px;
+        }
+        
+        .skill-category {
+            font-weight: bold;
+            color: #e31e24;
+        }
+        
+        .languages {
+            font-size: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #e31e24;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .download-btn:hover {
+            background: #c41e3a;
+        }
+        
+        @media print {
+            .download-btn {
+                display: none;
+            }
+            body {
+                max-width: none;
+                padding: 0;
+                font-size: 11px;
+            }
+            .name {
+                font-size: 24px;
+            }
+            .section-title {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">📄 Print/PDF</button>
+    <button class="download-btn" onclick="saveAsHTML()" style="top: 60px;">💾 Save HTML</button>
+    
+    <div class="header">
+        <div class="name">Juan Pablo Arango</div>
+        <div class="title">Software Engineer | Cloud & Telecom Systems | AI | Full-Stack Developer</div>
+        <div class="contact-info">
+            Keswick, ON <span>|</span> juan.pablo.arango.renteria@gmail.com <span>|</span> (613) 762-2123<br>
+            github.com/JPArangoRenteria <span>|</span> linkedin.com/in/juan-pablo-arango
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary-text">
+            Versatile Software Engineer with dual degrees in Communication Engineering and Applied Mathematics, bringing extensive experience in telecommunications, cloud infrastructure, and full-stack development. Proven track record in designing CI/CD pipelines, implementing cloud-native solutions, and developing scalable software systems. Strong background in telecom protocols including 5G RAN and Cloud RAN technologies, combined with expertise in modern development frameworks and DevOps practices. Demonstrated ability to work in cross-functional teams and deliver high-quality solutions in fast-paced environments.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-grid">
+            <div><span class="skill-category">Programming Languages:</span> Python, Java, JavaScript, C/C++, Go, MATLAB, R, Bash</div>
+            <div><span class="skill-category">Web Technologies:</span> React.js, Node.js, HTML, CSS, PHP, SQL</div>
+            <div><span class="skill-category">Cloud & DevOps:</span> AWS, Docker, Kubernetes, Jenkins, CI/CD Pipelines</div>
+            <div><span class="skill-category">Monitoring Tools:</span> Prometheus, Grafana, OpenDashboard</div>
+            <div><span class="skill-category">Mobile Development:</span> Flutter, React Native</div>
+            <div><span class="skill-category">AI/ML Frameworks:</span> PyTorch, TensorFlow, Google Colab</div>
+            <div><span class="skill-category">Telecom Technologies:</span> 5G RAN, Cloud RAN, RF Systems, Signal Processing</div>
+            <div><span class="skill-category">Operating Systems:</span> Unix/Linux, Shell Scripting, Windows</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">AI Research Assistant</div>
+                    <div class="company">Carleton University</div>
+                </div>
+                <div class="date">Apr 2025 – Present</div>
+            </div>
+            <div class="location">Ottawa, ON</div>
+            <div class="description">
+                <ul>
+                    <li>Developed ML pipelines for EEG and airflow data fusion to detect physiological arousals</li>
+                    <li>Implemented cross-validation methodologies and prototype evaluation frameworks</li>
+                    <li>TCPS 2: CORE certified for ethical research practices</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Cloud RAN Systems Designer</div>
+                    <div class="company">Ericsson Inc.</div>
+                </div>
+                <div class="date">May 2023 – Aug 2024</div>
+            </div>
+            <div class="location">Ottawa, ON</div>
+            <div class="description">
+                <ul>
+                    <li>Designed and implemented robust CI/CD pipelines using Docker, Kubernetes, and Jenkins</li>
+                    <li>Developed comprehensive automated testing and monitoring systems with Prometheus and Grafana</li>
+                    <li>Collaborated with cross-functional teams to troubleshoot deployment issues and optimize system performance</li>
+                    <li>Created detailed technical documentation to support internal training and onboarding processes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Teaching Assistant</div>
+                    <div class="company">Carleton University</div>
+                </div>
+                <div class="date">Sep 2024 – Dec 2024, Sep 2022 – Dec 2022</div>
+            </div>
+            <div class="location">Ottawa, ON</div>
+            <div class="description">
+                <ul>
+                    <li>Instructed students in Software Requirements (SYSC 3120) and Data Management (ECOR 1042)</li>
+                    <li>Achieved 5% improvement in student performance outcomes through innovative teaching methods</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Embedded Software Intern</div>
+                    <div class="company">Nokia</div>
+                </div>
+                <div class="date">May 2022 – Aug 2022</div>
+            </div>
+            <div class="location">Ottawa, ON</div>
+            <div class="description">
+                <ul>
+                    <li>Refactored critical C code components to significantly reduce system latency</li>
+                    <li>Developed traffic simulation tools and enhanced real-time communication protocols</li>
+                    <li>Gained expertise in Unix-based development environments and shell scripting</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Full Stack Developer</div>
+                    <div class="company">Neurobotx</div>
+                </div>
+                <div class="date">Aug 2021 – Dec 2021</div>
+            </div>
+            <div class="location">Ottawa, ON</div>
+            <div class="description">
+                <ul>
+                    <li>Built Flutter mobile application interface for neuro-AI tools with custom API integrations</li>
+                    <li>Implemented real-time control systems and user-friendly interfaces</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        
+        <div class="education-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Bachelor of Engineering, Communication Engineering</div>
+                    <div class="company">Carleton University</div>
+                </div>
+                <div class="date">Sep 2020 – May 2025</div>
+            </div>
+            <div class="location">Ottawa, ON</div>
+            <div class="description">Dean's List (2020–2021, 2024–2025)</div>
+        </div>
+
+        <div class="education-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Bachelor of Mathematics, Applied Mathematics</div>
+                    <div class="company">University of Waterloo</div>
+                </div>
+                <div class="date">Sep 2016 – Aug 2020</div>
+            </div>
+            <div class="location">Waterloo, ON</div>
+            <div class="description">Entrance Scholarship Recipient, Dean's List 2020</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Key Projects</div>
+        
+        <div class="project-item">
+            <div class="job-header">
+                <div class="job-title">LEO Satellite Network Simulator (Capstone Project)</div>
+                <div class="date">2024–2025</div>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Designed comprehensive OSPF routing simulation with FSPL calculations for satellite connections</li>
+                    <li>Integrated ML-based failure prediction algorithms in LEO satellite mesh networks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="job-header">
+                <div class="job-title">SDN Green Routing Tool</div>
+                <div class="date">Fall 2024</div>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Developed energy-aware routing algorithm using Expectation Maximization techniques</li>
+                    <li>Created performance visualization tools using real-world traffic datasets</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="job-header">
+                <div class="job-title">Voting System Simulator</div>
+                <div class="date">2024–Present</div>
+            </div>
+            <div class="description">
+                <ul>
+                    <li>Built React web application for visualizing voting paradoxes and election methodologies</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Languages</div>
+        <div class="languages">
+            <span><strong>English:</strong> Professional</span>
+            <span><strong>Spanish:</strong> Native</span>
+            <span><strong>French:</strong> Advanced</span>
+            <span><strong>Portuguese:</strong> Advanced</span>
+        </div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            // Hide the download button
+            const btn = document.querySelector('.download-btn');
+            btn.style.display = 'none';
+            
+            // Trigger print dialog
+            setTimeout(() => {
+                window.print();
+                // Show button again after print dialog
+                setTimeout(() => {
+                    btn.style.display = 'block';
+                }, 1000);
+            }, 100);
+        }
+        
+        // Alternative: Save as HTML file that can be converted to PDF
+        function saveAsHTML() {
+            const content = document.documentElement.outerHTML;
+            const blob = new Blob([content], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Juan_Pablo_Arango_CV.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
